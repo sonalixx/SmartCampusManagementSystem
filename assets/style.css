@@ -1,0 +1,247 @@
+/* ==========================================================
+   Dark theme – Streamlit app
+   ========================================================== */
+
+:root {
+    --bg:            #0F172A;   /* page background */
+    --surface:       #1E293B;   /* cards, inputs, chat */
+    --surface-hover: #273449;
+    --border:        #334155;
+    --text:          #E2E8F0;   /* body text */
+    --text-strong:   #F8FAFC;   /* headings */
+    --text-muted:    #94A3B8;   /* secondary text */
+    --accent:        #60A5FA;
+    --accent-soft:   rgba(96, 165, 250, 0.15);
+    --danger:        #DC2626;
+    --danger-hover:  #B91C1C;
+}
+
+/* ---------- Main application ---------- */
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stHeader"] {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+[data-testid="stSidebar"] {
+    background-color: var(--surface) !important;
+}
+
+.block-container {
+    max-width: 850px;
+    padding: 1.5rem 1rem 5rem 1rem;
+}
+
+/* ---------- Global text ---------- */
+.stApp p,
+.stApp label,
+.stApp span,
+.stApp li,
+.stApp .stMarkdown,
+.stApp [data-testid="stWidgetLabel"] {
+    color: var(--text);
+}
+
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4 {
+    color: var(--text-strong) !important;
+}
+
+/* ---------- Header ---------- */
+.app-header {
+    padding: 12px 4px;
+}
+
+.app-header h2 {
+    color: var(--text-strong) !important;
+    margin: 0;
+}
+
+.app-header p {
+    color: var(--text-muted) !important;
+    font-size: 14px;
+}
+
+/* ---------- Welcome card ----------
+   Keeps white text; placed after the global heading rules
+   with higher specificity so it always wins. */
+.welcome-card {
+    background: linear-gradient(135deg, #1D4ED8, #3B82F6);
+    border-radius: 16px;
+    padding: 28px 24px;
+}
+
+.stApp .welcome-card h1,
+.stApp .welcome-card h2,
+.stApp .welcome-card h3,
+.stApp .welcome-card p,
+.stApp .welcome-card span {
+    color: #FFFFFF !important;
+}
+
+.stApp .welcome-card h1 {
+    font-weight: 700 !important;
+}
+
+/* ---------- Information cards ---------- */
+.info-card {
+    background: var(--surface);
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    color: var(--text) !important;
+}
+
+.info-card p,
+.info-card b,
+.info-card h3 {
+    color: var(--text) !important;
+}
+
+.info-card h3 {
+    color: var(--text-strong) !important;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    background-color: var(--surface);
+    color: var(--text-strong) !important;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    min-height: 48px;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--accent);
+    color: var(--text-strong) !important;
+}
+
+.stButton > button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Emergency button */
+.stButton > button[kind="primary"] {
+    background-color: var(--danger);
+    color: #FFFFFF !important;
+    border: none;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background-color: var(--danger-hover);
+    color: #FFFFFF !important;
+}
+
+/* ---------- Navigation ---------- */
+div[role="radiogroup"] {
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+div[role="radiogroup"] label {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 7px 12px;
+}
+
+div[role="radiogroup"] label:hover {
+    background-color: var(--surface-hover);
+}
+
+div[role="radiogroup"] label:has(input:checked) {
+    background-color: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+div[role="radiogroup"] label p {
+    color: var(--text) !important;
+}
+
+/* ---------- Input fields ---------- */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input {
+    background-color: var(--surface) !important;
+    color: var(--text-strong) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 10px;
+}
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 1px var(--accent) !important;
+}
+
+.stSelectbox div[data-baseweb="select"] > div {
+    background-color: var(--surface) !important;
+    color: var(--text-strong) !important;
+    border-color: var(--border) !important;
+}
+
+/* Dropdown menu popover */
+div[data-baseweb="popover"] ul,
+div[data-baseweb="menu"] {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+}
+
+/* ---------- Chat ---------- */
+[data-testid="stChatMessage"] {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+[data-testid="stChatInput"] textarea {
+    background-color: var(--surface) !important;
+    color: var(--text-strong) !important;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    color: var(--text-muted) !important;
+    font-size: 12px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+    .block-container {
+        padding: 1rem 0.8rem 4rem 0.8rem;
+    }
+
+    .welcome-card {
+        padding: 20px 16px;
+    }
+
+    .stApp .welcome-card h1 {
+        font-size: 22px !important;
+    }
+
+    .stApp h1 {
+        font-size: 25px !important;
+    }
+
+    div[role="radiogroup"] label {
+        font-size: 12px;
+        padding: 6px 9px;
+    }
+
+    .stButton > button {
+        min-height: 48px;
+    }
+}
