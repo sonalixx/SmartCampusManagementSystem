@@ -1,0 +1,14 @@
+# Secrets and Environment Variables
+.env
+
+# Local Databases and Cache
+campus_local_db.json
+__pycache__/
+*.pyc
+
+# Streamlit temporary and config credentials
+.streamlit/credentials.toml
+
+# OS files
+Thumbs.db
+.DS_Store
