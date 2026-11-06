@@ -1,247 +1,246 @@
 /* ==========================================================
-   Dark theme – Streamlit app
+   Alliance University - Smart Campus Management System
+   Enterprise Academic Dark Theme CSS
    ========================================================== */
 
 :root {
-    --bg:            #0F172A;   /* page background */
-    --surface:       #1E293B;   /* cards, inputs, chat */
-    --surface-hover: #273449;
-    --border:        #334155;
-    --text:          #E2E8F0;   /* body text */
-    --text-strong:   #F8FAFC;   /* headings */
-    --text-muted:    #94A3B8;   /* secondary text */
-    --accent:        #60A5FA;
-    --accent-soft:   rgba(96, 165, 250, 0.15);
-    --danger:        #DC2626;
-    --danger-hover:  #B91C1C;
+    --au-bg: #0d1117;
+    --au-card-bg: #161b22;
+    --au-card-hover: #1c2128;
+    --au-border: #30363d;
+    --au-crimson: #8b0000;
+    --au-red: #ef4444;
+    --au-gold: #f59e0b;
+    --au-blue: #3b82f6;
+    --au-cyan: #06b6d4;
+    --au-green: #10b981;
+    --au-text-main: #f0f6fc;
+    --au-text-muted: #8b949e;
 }
 
-/* ---------- Main application ---------- */
-.stApp,
-[data-testid="stAppViewContainer"],
-[data-testid="stHeader"] {
-    background-color: var(--bg) !important;
-    color: var(--text) !important;
+/* Base Streamlit App */
+.stApp {
+    background-color: var(--au-bg);
+    color: var(--au-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-[data-testid="stSidebar"] {
-    background-color: var(--surface) !important;
-}
-
-.block-container {
-    max-width: 850px;
-    padding: 1.5rem 1rem 5rem 1rem;
-}
-
-/* ---------- Global text ---------- */
-.stApp p,
-.stApp label,
-.stApp span,
-.stApp li,
-.stApp .stMarkdown,
-.stApp [data-testid="stWidgetLabel"] {
-    color: var(--text);
-}
-
-.stApp h1,
-.stApp h2,
-.stApp h3,
-.stApp h4 {
-    color: var(--text-strong) !important;
-}
-
-/* ---------- Header ---------- */
-.app-header {
-    padding: 12px 4px;
-}
-
-.app-header h2 {
-    color: var(--text-strong) !important;
-    margin: 0;
-}
-
-.app-header p {
-    color: var(--text-muted) !important;
-    font-size: 14px;
-}
-
-/* ---------- Welcome card ----------
-   Keeps white text; placed after the global heading rules
-   with higher specificity so it always wins. */
-.welcome-card {
-    background: linear-gradient(135deg, #1D4ED8, #3B82F6);
-    border-radius: 16px;
-    padding: 28px 24px;
-}
-
-.stApp .welcome-card h1,
-.stApp .welcome-card h2,
-.stApp .welcome-card h3,
-.stApp .welcome-card p,
-.stApp .welcome-card span {
-    color: #FFFFFF !important;
-}
-
-.stApp .welcome-card h1 {
-    font-weight: 700 !important;
-}
-
-/* ---------- Information cards ---------- */
-.info-card {
-    background: var(--surface);
-    padding: 18px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    margin-bottom: 12px;
-    color: var(--text) !important;
-}
-
-.info-card p,
-.info-card b,
-.info-card h3 {
-    color: var(--text) !important;
-}
-
-.info-card h3 {
-    color: var(--text-strong) !important;
-}
-
-/* ---------- Buttons ---------- */
-.stButton > button {
-    background-color: var(--surface);
-    color: var(--text-strong) !important;
-    border: 1px solid var(--border);
+/* University Header Container */
+.au-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #161b22 0%, #1f242c 50%, #2a1518 100%);
+    border-bottom: 3px solid var(--au-crimson);
+    border-top: 1px solid var(--au-border);
+    padding: 16px 24px;
     border-radius: 12px;
-    min-height: 48px;
-    font-weight: 600;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.stButton > button:hover {
-    background-color: var(--surface-hover);
-    border-color: var(--accent);
-    color: var(--text-strong) !important;
+.au-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
-.stButton > button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+.au-subtitle {
+    font-size: 13px;
+    color: var(--au-text-muted);
+    margin-top: 4px;
+    font-weight: 500;
 }
 
-/* Emergency button */
-.stButton > button[kind="primary"] {
-    background-color: var(--danger);
-    color: #FFFFFF !important;
-    border: none;
+.au-naac-badge {
+    background-color: #ffffff;
+    color: #8b0000;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 13px;
+    border-left: 5px solid #b91c1c;
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+    display: inline-block;
+    text-align: right;
 }
 
-.stButton > button[kind="primary"]:hover {
-    background-color: var(--danger-hover);
-    color: #FFFFFF !important;
+/* Hero Student Cover Card */
+.student-cover-hero {
+    background: linear-gradient(135deg, #1e1e2f 0%, #171d2b 50%, #201318 100%);
+    border: 1px solid #3b4252;
+    border-left: 6px solid var(--au-crimson);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 28px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
 }
 
-/* ---------- Navigation ---------- */
-div[role="radiogroup"] {
-    gap: 6px;
-    flex-wrap: wrap;
-}
-
-div[role="radiogroup"] label {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 7px 12px;
-}
-
-div[role="radiogroup"] label:hover {
-    background-color: var(--surface-hover);
-}
-
-div[role="radiogroup"] label:has(input:checked) {
-    background-color: var(--accent-soft);
-    border-color: var(--accent);
-}
-
-div[role="radiogroup"] label p {
-    color: var(--text) !important;
-}
-
-/* ---------- Input fields ---------- */
-.stTextInput input,
-.stTextArea textarea,
-.stNumberInput input {
-    background-color: var(--surface) !important;
-    color: var(--text-strong) !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 10px;
-}
-
-.stTextInput input::placeholder,
-.stTextArea textarea::placeholder {
-    color: var(--text-muted) !important;
-}
-
-.stTextInput input:focus,
-.stTextArea textarea:focus {
-    border-color: var(--accent) !important;
-    box-shadow: 0 0 0 1px var(--accent) !important;
-}
-
-.stSelectbox div[data-baseweb="select"] > div {
-    background-color: var(--surface) !important;
-    color: var(--text-strong) !important;
-    border-color: var(--border) !important;
-}
-
-/* Dropdown menu popover */
-div[data-baseweb="popover"] ul,
-div[data-baseweb="menu"] {
-    background-color: var(--surface) !important;
-    color: var(--text) !important;
-}
-
-/* ---------- Chat ---------- */
-[data-testid="stChatMessage"] {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
+.student-id-card {
+    background: linear-gradient(145deg, #1a2230 0%, #131922 100%);
+    border: 1px solid #2d3748;
     border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
 }
 
-[data-testid="stChatInput"] textarea {
-    background-color: var(--surface) !important;
-    color: var(--text-strong) !important;
+.student-id-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8b0000, #ef4444, #3b82f6);
 }
 
-/* ---------- Footer ---------- */
-.footer {
+/* Quick Action Cards */
+.quick-action-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 18px 16px;
     text-align: center;
-    color: var(--text-muted) !important;
-    font-size: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    height: 100%;
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 600px) {
-    .block-container {
-        padding: 1rem 0.8rem 4rem 0.8rem;
-    }
+.quick-action-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--au-blue);
+}
 
-    .welcome-card {
-        padding: 20px 16px;
-    }
+.quick-action-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
 
-    .stApp .welcome-card h1 {
-        font-size: 22px !important;
-    }
+.quick-action-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
 
-    .stApp h1 {
-        font-size: 25px !important;
-    }
+.quick-action-desc {
+    font-size: 12px;
+    color: var(--au-text-muted);
+}
 
-    div[role="radiogroup"] label {
-        font-size: 12px;
-        padding: 6px 9px;
-    }
+/* Metric Stats Cards */
+.stat-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-    .stButton > button {
-        min-height: 48px;
-    }
+.stat-number {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--au-blue);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--au-text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Pulsing Red SOS Button Effect */
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { box-shadow: 0 0 0 18px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.sos-btn-box {
+    animation: pulse-red 2s infinite;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+/* Critical Emergency Banner */
+.emergency-banner {
+    background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 100%);
+    border: 2px solid #ef4444;
+    color: #ffffff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: pulse-red 2s infinite;
+}
+
+/* Notification & Feed Cards */
+.notif-card {
+    background-color: #161b22;
+    border-left: 5px solid var(--au-blue);
+    border-top: 1px solid #30363d;
+    border-right: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+}
+
+.notif-card-emergency {
+    background-color: #201314;
+    border-left: 5px solid #ef4444;
+    border-top: 1px solid #7f1d1d;
+    border-right: 1px solid #7f1d1d;
+    border-bottom: 1px solid #7f1d1d;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+}
+
+/* Team Member Cards */
+.team-member-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    height: 100%;
+}
+
+.team-avatar {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.team-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.team-id {
+    font-size: 13px;
+    color: var(--au-blue);
+    font-family: monospace;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.team-role {
+    font-size: 12px;
+    color: var(--au-text-muted);
 }
